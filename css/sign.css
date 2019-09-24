@@ -1,0 +1,76 @@
+.row{
+    height: 90vh;
+}
+
+.col-fixed{
+    width: 320px;
+}
+
+.form-control{
+    margin-top:5px;
+    background: #ececf6;
+}
+
+.re-div{
+    margin-top:20px;
+    margin-bottom: 20px;
+}
+
+#re-button{
+    width:100%;
+}
+
+.col-sign{
+    margin-top:5px;
+    padding: 20px;
+    border-style:solid;
+    border-color:#aaaaee;
+    border-width:2px;
+    width: 320px;
+}
+
+#up-box{
+    padding: 20px;
+    border-style:solid;  /*設定邊框*/
+    border-color:#aaaaee;
+    border-width:2px;
+}
+
+#bpttom-box{
+    margin-top:20px;
+    padding: 20px;
+    border-style:solid;  /*設定邊框*/
+    border-color:#aaaaee;
+    border-width:2px;
+}
+
+#font{
+    font-size:14px;
+}
+
+.remind{
+    color: red;
+}
+
+.sign_input{
+    margin-bottom: 2px;
+}
+
+.btn-div{
+    margin-top: 15px;
+}
+
+.sign-div{
+    background-image:url('https://www.wegoedu.com.tw/wp-content/uploads/2017/11/%E6%AB%BB%E8%8A%B1%E8%83%8C%E6%99%AF%E5%9C%96.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    height: 100%;
+}
+
+.small-div{
+    background-color: rgb(188, 214, 247) ;
+    padding: 20px;
+    opacity: 0.9;
+}

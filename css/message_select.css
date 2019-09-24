@@ -1,0 +1,45 @@
+#in_submit{
+    float:right;
+}
+
+#div_update{
+    display:none;
+}
+
+.up_btn_row{
+    float:right; 
+    margin-top: 10px;
+}
+
+.out-btn{
+    margin-bottom: 10px
+}
+
+.footer {
+    position: fixed;
+    left: 0px;
+    bottom: 0px;
+    width: 100%;
+    height: 230px;
+    background-color: #eee;
+    z-index: 9999;
+}
+
+
+.null-footer {
+    overflow: hidden;
+    height: 230px;
+}
+
+
+.Buttonupd {
+    margin-right: 5px;
+}
+
+pre{
+    font-size: 14px;
+    margin: 0px;
+    padding: 0px;
+    border: none;
+    background: none;
+}

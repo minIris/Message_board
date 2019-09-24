@@ -1,0 +1,106 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/htmlcharset=utf-8">
+        <!-- Required meta tags -->
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="../css/message_select.css">
+        
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="../js/message_select.js" charset="UTF-8" defer></script>
+        
+        <title><{$title}></title>
+    </head>
+    <body id="mybody">
+        <div class="container">
+            <div class="wrap">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2 class="text-center">會員留言板</h2>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 text-right out-btn">
+                        <input type="hidden" id="m_no" value="<{$m_no}>">
+                        <{$m_id}> 
+                        <input type="button" class="btn btn-warning" id="out" name="out" value="登出" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <table class="table table-hover">
+                            <tbody>
+                                <{foreach from=$message_data item=data}>
+                                <tr id="msg_tr_<{$data.mb_no}>">
+                                    <td>
+                                        <{if $data.qualifications}>
+                                            <input type="hidden" name="memberID" value="<{$data.mb_no}>">
+                                            <input type="button"  class="Buttonupd btn btn-info"  value="修改">
+                                            <input type="button"  class="Buttondel btn btn-info"  value="刪除">
+                                            <br>
+                                        <{/if}>
+                                        留言人：<{$data.m_id}><br>
+                                        內容：<pre id="msg_text_<{$data.mb_no}>"><{$data.content}></pre>
+                                        留言時間：<{$data.insert_time}><br>
+                                        <span id="msg_up_time_<{$data.mb_no}>">
+                                        <{if $data.update_time != null}>
+                                            最後修改留言時間：<{$data.update_time}>
+                                        <{/if}>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <{/foreach}>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="row null-footer">
+            </div>
+            <div class="footer">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 text-center">
+                            <ul class="pagination">
+                                <li><a href="<{$showPage.url}>page=1">&laquo;</a></li>
+                                <li><a href="<{$showPage.url}>page=<{$showPage.prev}>">&lt;</a></li>
+                                    <{foreach from=$showPage.pageList item=page}>
+                                        <li<{if $page==$showPage.now_page }> class="active"<{/if}>><a href="<{$showPage.url}>page=<{$page}>"><{$page}></a></li>
+                                    <{/foreach}>
+                                <li><a href="<{$showPage.url}>page=<{$showPage.next}>">&gt;</a></li>
+                                <li><a href="<{$showPage.url}>page=<{$showPage.total_page}>">&raquo;</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h4>新增留言</h4>
+                            <textarea class="form-control" id="in_content" name="in_content"></textarea>
+                            <br>
+                            剩餘<span id="textCount">50</span>個字
+                            <input type="button" class="btn btn-success" id="in_submit" value="送出">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="div_update">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h4 id="update_title">修改留言內容</h4>
+                        <input type="hidden" name="mb_no" id="mb_no" />
+                        <textarea class="form-control" id="up_conkent" name="content"></textarea>
+                        <div class="row up_btn_row">
+                            <div class="col-md-12">
+                                <input type="button" class="btn btn-info" id="btn_update" name="update" value="送出修改">
+                                <input type="button" class="btn btn-info" id="up_cancel" name="up_cancel" value="取消">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

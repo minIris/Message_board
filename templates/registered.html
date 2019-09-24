@@ -1,0 +1,48 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <!-- Required meta tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="registered.css" type="text/css">
+
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../mjs/sign_in.js" charset="UTF-8" defer></script>
+
+    
+    <title>會員註冊</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row justify-content-center align-items-center">
+            <div class="col-fixed">
+                <div id="up-box">
+                    <div class="text-center">
+                        <h3>會員註冊</h3>
+                        <h5><small>註冊後登入即可查看會員留言。</small></h5>
+                    </div>
+                    <hr>
+                    <div>
+                        <input type="text" class="form-control re_input" placeholder="帳號" id="re_m_id" />
+                        <input type="password" class="form-control re_input" placeholder="密碼" id="m_password" />
+                        <input type="password" class="form-control re_input" placeholder="再次輸入密碼" id="re_m_password" />
+                        <span class="remind">帳號、密碼最多10碼，且不可使用空白</span>
+                        <div class="re-div">
+                            <input type="button" class="btn btn-info" id="re-button" name="registered" value="註冊"/>
+                        </div>
+                    </div>
+                </div>
+                <div id="bpttom-box">
+                    <div class="text-center">
+                        <span id="font">已經有帳號嗎？
+                        <a href="../mphp/sign_in.php">登入</a></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
