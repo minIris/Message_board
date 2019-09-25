@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-09-24 12:10:18
+/* Smarty version 3.1.33, created on 2019-09-25 14:36:11
   from 'C:\xampp\htdocs\message_board\templates\message_select.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5d89eb8a3477b2_12559215',
+  'unifunc' => 'content_5d8b0adb6027b5_41465831',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'd479a852e52b2c940287c45b2a154c575c1a6d8f' => 
     array (
       0 => 'C:\\xampp\\htdocs\\message_board\\templates\\message_select.html',
-      1 => 1569319596,
+      1 => 1569393364,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5d89eb8a3477b2_12559215 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5d8b0adb6027b5_41465831 (Smarty_Internal_Template $_smarty_tpl) {
 ?><html>
     <head>
         <meta http-equiv="Content-Type" content="text/htmlcharset=utf-8">
@@ -28,7 +28,7 @@ function content_5d89eb8a3477b2_12559215 (Smarty_Internal_Template $_smarty_tpl)
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-        <link rel="stylesheet" type="text/css" href="../css/message_select.css">
+        <link rel="stylesheet" type="text/css" href="/message_board/css/message_select.css">
         
         <?php echo '<script'; ?>
  src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js'><?php echo '</script'; ?>
@@ -37,7 +37,7 @@ function content_5d89eb8a3477b2_12559215 (Smarty_Internal_Template $_smarty_tpl)
  src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"><?php echo '</script'; ?>
 >
         <?php echo '<script'; ?>
- type="text/javascript" src="../js/message_select.js" charset="UTF-8" defer><?php echo '</script'; ?>
+ type="text/javascript" src="/message_board/js/message_select.js" charset="UTF-8" defer><?php echo '</script'; ?>
 >
         
         <title><?php echo $_smarty_tpl->tpl_vars['title']->value;?>
@@ -121,7 +121,8 @@ $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->t
 if ($_from !== null) {
 foreach ($_from as $_smarty_tpl->tpl_vars['page']->value) {
 ?>
-                                        <li<?php if ($_smarty_tpl->tpl_vars['page']->value == $_smarty_tpl->tpl_vars['showPage']->value['now_page']) {?> class="active"<?php }?>><a href="<?php echo $_smarty_tpl->tpl_vars['showPage']->value['url'];?>
+                                        <li<?php if ($_smarty_tpl->tpl_vars['page']->value == $_smarty_tpl->tpl_vars['showPage']->value['now_page']) {?> class="active"<?php }?>>
+                                        <a href="<?php echo $_smarty_tpl->tpl_vars['showPage']->value['url'];?>
 page=<?php echo $_smarty_tpl->tpl_vars['page']->value;?>
 "><?php echo $_smarty_tpl->tpl_vars['page']->value;?>
 </a></li>
@@ -158,8 +159,8 @@ page=<?php echo $_smarty_tpl->tpl_vars['showPage']->value['total_page'];?>
                         <textarea class="form-control" id="up_conkent" name="content"></textarea>
                         <div class="row up_btn_row">
                             <div class="col-md-12">
-                                <input type="button" class="btn btn-info" id="btn_update" name="update" value="送出修改">
-                                <input type="button" class="btn btn-info" id="up_cancel" name="up_cancel" value="取消">
+                                <input type="button" class="btn btn-info" id="btn_update" value="送出修改">
+                                <input type="button" class="btn btn-info" id="up_cancel" value="取消">
                             </div>
                         </div>
                     </div>

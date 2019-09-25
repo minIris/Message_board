@@ -67,7 +67,8 @@
                                 <li><a href="<{$showPage.url}>page=1">&laquo;</a></li>
                                 <li><a href="<{$showPage.url}>page=<{$showPage.prev}>">&lt;</a></li>
                                     <{foreach from=$showPage.pageList item=page}>
-                                        <li<{if $page==$showPage.now_page }> class="active"<{/if}>><a href="<{$showPage.url}>page=<{$page}>"><{$page}></a></li>
+                                        <li<{if $page==$showPage.now_page }> class="active"<{/if}>>
+                                        <a href="<{$showPage.url}>page=<{$page}>"><{$page}></a></li>
                                     <{/foreach}>
                                 <li><a href="<{$showPage.url}>page=<{$showPage.next}>">&gt;</a></li>
                                 <li><a href="<{$showPage.url}>page=<{$showPage.total_page}>">&raquo;</a></li>
@@ -94,8 +95,8 @@
                         <textarea class="form-control" id="up_conkent" name="content"></textarea>
                         <div class="row up_btn_row">
                             <div class="col-md-12">
-                                <input type="button" class="btn btn-info" id="btn_update" name="update" value="送出修改">
-                                <input type="button" class="btn btn-info" id="up_cancel" name="up_cancel" value="取消">
+                                <input type="button" class="btn btn-info" id="btn_update" value="送出修改">
+                                <input type="button" class="btn btn-info" id="up_cancel" value="取消">
                             </div>
                         </div>
                     </div>

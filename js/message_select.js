@@ -20,6 +20,7 @@ $("#in_content").keyup( function ()
     }
 });
 
+
 //登出
 $('#out').on('click', function ()
 {
@@ -28,7 +29,6 @@ $('#out').on('click', function ()
         dataType:"json",
         url: "/message_board/member/signOut",
         data: {
-            operating: 'sign_out'
         },
         success: function (Rdata)
         {
@@ -43,6 +43,7 @@ $('#out').on('click', function ()
     });
 });
 
+
 //新增
 $('#in_submit').on('click', function ()
 {
@@ -51,15 +52,15 @@ $('#in_submit').on('click', function ()
     $.ajax({
         type: "POST",
         dataType:"json",
-        url: "../mphp/message_insert.php",
+        url: "/message_board/message/addmessage",
         data: {
-            in_content: ct,
+            content: ct,
             m_no: m_no
         },
         success: function (Rdata)
         {
             if (Rdata.status === true) {
-                document.location.href="../mphp/message_select.php";
+                document.location.href="/message_board/message/index";
             } else if (Rdata.status === false) {
                 alert(Rdata.msg);
             }
@@ -71,6 +72,7 @@ $('#in_submit').on('click', function ()
     });
 });
 
+
 //刪除
 $('.Buttondel').on('click', function ()
 {
@@ -80,7 +82,7 @@ $('.Buttondel').on('click', function ()
         $.ajax({
             type: "POST", //傳送方式
             dataType:"json",
-            url: "../mphp/message_delete.php", //傳送目的地
+            url: "/message_board/message/deletemessage", //傳送目的地
             data: {
                 mb_no: mb_no
             },
@@ -102,12 +104,10 @@ $('.Buttondel').on('click', function ()
 });
 
 
-
 //修改
 $('.Buttonupd').on('click', function ()
 {
     let mb_no = $(this).prev().val();
-    // showUpdate(mb_no);
     showUpdateDiv(mb_no);
 });
 
@@ -118,9 +118,8 @@ $('#btn_update').on('click', function ()
     $.ajax({
         type: "POST", 
         dataType:"json",
-        url: "../mphp/message_update.php",
+        url: "/message_board/message/updatemessage",
         data: {
-            operating: 'update',
             content: content,
             mb_no: mbno
         },
@@ -143,11 +142,13 @@ $('#btn_update').on('click', function ()
 });
 
 
+
 //隱藏修改div
 $('#up_cancel').on('click', function ()
 {
     $("#div_update").hide();
 });
+
 
 //顯示修改內容
 function showUpdateDiv(mb_no)

@@ -40,7 +40,6 @@ function signin(){
         data: {
             m_id: m_id,
             m_password: m_password,
-            operating: 'sign_in'
         },
         success: function(Rdata) {
             if (Rdata.atuh === true) {
@@ -58,9 +57,8 @@ function signin(){
 
 //跳註冊頁
 $('#btn_registered').on('click', function () {
-    document.location.href="../mhtml/registered.html";
+    document.location.href="/message_board/member/registeredindex";
 });
-
 //註冊
 $('#re-button').on('click', function () {
     let m_id = $("#re_m_id").val();
@@ -69,7 +67,7 @@ $('#re-button').on('click', function () {
     $.ajax({
         type: "POST",
         dataType:"json",
-        url: "/message_board/member/addMember",
+        url: "/message_board/member/registered",
         data: {
             m_id: m_id,
             m_password: m_password,
@@ -78,7 +76,7 @@ $('#re-button').on('click', function () {
         success: function(Rdata) {
             if (Rdata.status === true) {
                 alert(Rdata.msg);
-                document.location.href="../mphp/sign_in.php";
+                document.location.href="/message_board/member/index";
             } else if (Rdata.status === false) {
                 alert(Rdata.msg);
             }

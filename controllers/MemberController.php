@@ -2,16 +2,19 @@
 
 class MemberController extends Controller 
 {
+
+    //登入頁面
     public function index()
     {
         $this->smarty->display("sign_in.html");
         exit;
     }
 
+
     //登入
     public function signIn()
     {
-        $m_id = (isset($_POST['m_id'])) ? $_POST['m_id'] : null;
+        $m_id = (isset($_POST['m_id'])) ? addslashes($_POST['m_id']) : null;
         $m_password = (isset($_POST['m_password'])) ? $_POST['m_password'] : null;
 
         if (empty($m_id) or empty($m_password) && $m_password!==0) {
@@ -40,6 +43,7 @@ class MemberController extends Controller
         echo json_encode($result_data);
     }
 
+
     //登出
     public function signOut()
     {
@@ -51,10 +55,45 @@ class MemberController extends Controller
         echo json_encode($result_data);
     }
 
-    //新增會員
-    public function addMember()
+    
+    //註冊頁面
+    public function registeredIndex()
     {
-        
+        $this->smarty->display("registered.html");
+        exit;
+    }
+
+    //註冊
+    public function registered()
+    {
+        $m_id = (isset($_POST['m_id'])) ? addslashes($_POST['m_id']) : null;
+        $m_password = (isset($_POST['m_password'])) ? addslashes($_POST['m_password']) : null;
+        $re_m_password = (isset($_POST['re_m_password'])) ? addslashes($_POST['re_m_password']) : null;
+
+        if (empty($m_id) or empty($m_password) or empty($re_m_password)) {
+            $result_data['status'] = false;
+            $result_data['msg'] = '輸入資料不完整';
+        } else {
+            $data = $this->model('member')->getMember($m_id);
+            $presence = mysqli_num_rows($data);
+            if ($presence > 0) {  //是否有此會員
+                $result_data['status'] = false;
+                $result_data['msg'] = '此帳號已有人使用';
+            } elseif ($m_password !== $re_m_password) {
+                $result_data['status'] = false;
+                $result_data['msg'] = '密碼不相符，請再確認';
+            } else {
+                $addMember = $this->model('member')->addMember($m_id, $m_password);
+                if ($addMember) {
+                    $result_data['status'] = true;
+                    $result_data['msg'] = '註冊成功，請新登入';
+                } else {
+                    $result_data['status'] = false;
+                    $result_data['msg'] = '註冊失敗請，重新再試';
+                }
+            }
+        }
+        echo json_encode($result_data);
     }
 
 

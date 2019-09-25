@@ -37,6 +37,8 @@
 }
 
 pre{
+    white-space: pre-wrap; /*css-3*/ 
+    word-wrap: break-word; /*InternetExplorer5.5+*/
     font-size: 14px;
     margin: 0px;
     padding: 0px;
